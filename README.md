@@ -1,2 +1,6 @@
-# consume_feed_data
-Need to get all the feeds data stored in drupal to display current top post.
+Database name qed42
+
+Need modules must be enabled
+migrate
+migrate tools
+migrate plus

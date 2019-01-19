@@ -1,0 +1,30 @@
+id: news_feed_importer
+label: 'NDTV news feed'
+source:
+    plugin: url
+    data_fetcher_plugin: http
+    data_parser_plugin: xml
+    urls:
+        - 'http://feeds.feedburner.com/ndtvnews-top-stories.xml'
+    item_selector: /rss/channel/item
+    fields:
+        -
+            name: title
+            lable: title
+            selector: title
+    ids:
+        title:
+            type: string
+process:
+    title: title
+    type:
+        plugin: default_value
+        default_value: news
+destination:
+    plugin: 'entity:node'
+dependencies:
+    module:
+        - consume_feed_data
+    enforced:
+        module:
+            - consume_feed_data

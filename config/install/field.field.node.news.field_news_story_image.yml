@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_story_image
+    - node.type.news
+  module:
+    - file
+id: node.news.field_news_story_image
+field_name: field_news_story_image
+entity_type: node
+bundle: news
+label: 'Story Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: news_img
+  file_extensions: 'png jpg jpeg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

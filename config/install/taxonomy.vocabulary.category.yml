@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: news_category
+description: 'QED 42 news importer'
+hierarchy: 0
+weight: 0

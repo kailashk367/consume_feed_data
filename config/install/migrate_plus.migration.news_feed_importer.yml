@@ -28,9 +28,21 @@ source:
       name: pubDate
       label: pubDate
       selector: pubDate
+    -
+      name: StoryImage
+      label: StoryImage
+      selector: StoryImage
+    -
+      name: category
+      label: category
+      selector: category
+      
   ids:
     guid:
       type: string
+  constants:
+    file_source_uri: public://news_img/
+    file_destination: 'public://news_img/image.jpg'
 process:
   title: title
   field_news_guid: guid
@@ -45,6 +57,22 @@ process:
     from_format: 'D, d M Y H:i:s O'
     to_format: U
     source: pubDate
+  field_news_story_image:
+    -
+      plugin: download
+      source:
+        - StoryImage
+        - constants/file_destination
+      rename: true
+    -
+      plugin: entity_generate
+  field_news_category:
+    plugin: entity_generate
+    source: category
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: category
+    value_key: name
   type:
     plugin: default_value
     default_value: news

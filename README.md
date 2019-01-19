@@ -9,6 +9,7 @@
 `drush migrate-import` news_feed_importer to import 
 
 PHP version 7.0.33-1+ubuntu16.04.1
+Files folder permission must be writable.
 Drupal version 8.6.7
 Drush version 9.5.2
 
